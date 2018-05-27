@@ -41,7 +41,7 @@ blikeele.onclick = function() {
         } 
         }
     };
-	request.open('GET','http://127.0.0.1:8080/counter',true);
+	request.open('GET','http://52.15.135.89:8080/counter',true);
         request.send(null);
 };
 var commentsop = document.getElementById('commentoutput');
@@ -66,7 +66,7 @@ var commentsip = document.getElementById('commentin');
 							} 
 							}
 						};
-						request.open('GET','http://127.0.0.1:8080/submit-comment?commentinput='+commentsipvalue,true);
+						request.open('GET','http://52.15.135.89:8080/submit-comment?commentinput='+commentsipvalue,true);
             request.send(null);
 	}
  };
