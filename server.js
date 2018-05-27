@@ -27,8 +27,20 @@ app.get('/style.css', function (req, res) {
  app.get('/profilepiccroped.jpg', function (req, res) {
   res.sendFile(path.join(__dirname, 'Images', 'profilepiccroped.jpg'));
 });
-  
-  
+ var counter = 0;
+app.get('/counter', function (req, res) {
+    counter+=1;
+    res.send(counter.toString());
+    });
+	
+	//http://ranjithdss15.imad.hasura-app.io/submit-comment?comment=comment3
+  var comments=[];
+app.get('/submit-comment/', function (req, res) {
+    var comment= req.query.commentinput;
+    comments.push(comment);
+    res.send(JSON.stringify(comments));
+    });
+
   
 app.listen(app.get('port'), function(){
 	console.log('Express Started');

@@ -189,8 +189,16 @@ font-size: 20;
 }
 
 .commentoutput{
-	    padding-left: 80px;
+    padding-left: 80px;
     font-family: sans-serif;
     font-style: italic;
     color: white;
+    scroll-behavior: smooth;
+    background-color: #ff000052;
+    width: 714px;
+    position: absolute;
+    height: 90px;
+    overflow: scroll;
+    overflow-x: hidden;
+    overflow-wrap: break-word;
 }

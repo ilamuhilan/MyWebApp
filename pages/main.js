@@ -24,7 +24,52 @@ calculate.onclick = function() {
 	};
 	document.getElementById('calculate').onmouseover = function() {
 		
-		window.confirm("Continue");
+		//window.confirm("Continue");
 		console.log("Click here to calculate gst")
 	};
+	var blikeele  = document.getElementById("likebutton");
+blikeele.onclick = function() {
+    //alert('Liked');
+    var request =new XMLHttpRequest();
+    request.onreadystatechange =function() {
+        if(request.readyState === XMLHttpRequest.DONE) {
+            if(request.status ===200){
+            var counter =  request.responseText;
+            var span=document.getElementById('likecount');
+            span.innerHTML = counter.toString();
+           
+        } 
+        }
+    };
+	request.open('GET','http://127.0.0.1:8080/counter',true);
+        request.send(null);
+};
+var commentsop = document.getElementById('commentoutput');
+var submitclick = document.getElementById('commentbutton');
+ submitclick.onclick = function() {
+var commentsip = document.getElementById('commentin');
+ commentsipvalue=commentsip.value;
+ if(commentsipvalue!=='')
+    {
+		var request =new XMLHttpRequest();
+        request.onreadystatechange =function() {
+            if(request.readyState === XMLHttpRequest.DONE) {
+                if(request.status ===200){
+                    var list = ' ';
+                var comments =  request.responseText;
+				comments=JSON.parse(comments);
+				 for(var temp=0;temp<comments.length;++temp) {
+							 list += ('<li>' + comments[temp]);
+							  commentsop.innerHTML = list.toString();
+							  commentsip.value="";
+							}
+							} 
+							}
+						};
+						request.open('GET','http://127.0.0.1:8080/submit-comment?commentinput='+commentsipvalue,true);
+            request.send(null);
+	}
+ };
+
+	
 };
