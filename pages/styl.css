@@ -29,26 +29,27 @@ background-position:465px;
 background-repeat:no-repeat;
 }
 #searchbar{
-top:23px;
-left:240px;
-height:40px;
+    top: 23px;
+    left: 240px;
+    height: 26px;
+    width: 500px;
 }
 #profilearea{
 top:20px;
 left:780px;
-height:30px;
+height:0;
 }
 #profilearea1{
-top:25px;
-left:830px;
-height:40px;
-font-size:18px;
-font-family:verdana;
+top: 25px;
+    left: 830px;
+    height: 0;
+    font-size: 18px;
+    font-family: verdana;
 }
 #profilearea2{
 top:10px;
 left:750px;
-height:30px;
+height:0px;
 font-size:40px;
 font-family:verdana;
 }
@@ -84,8 +85,8 @@ border-radius: 10px/10px;
 	.coverpic {
 	background:white;
 	left:100px;
-	top:60px;
-	height:360px;
+	    top: 75px;
+    height: 375px;
 	width:850px;
 	position:absolute;
 	-webkit-box-shadow: 3px 3px 8px rgba(102, 255, 51, .75);
@@ -112,14 +113,14 @@ border-radius:5px/5px;
 	}
 
 .nameholder{
-	   top: 424px;
+	   top: 455px;
     //background: linear-gradient(to bottom right,#ff2626a3 ,#0072ffb3 );
         background: linear-gradient(to right,#e91d30 ,#f555ff  );
 	position: absolute;
     color: ghostwhite;
     left: 100;
     width: 850;
-    height: 73px;
+    height: 46px;
 }
 
 #navigationlink {
