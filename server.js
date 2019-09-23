@@ -8,8 +8,8 @@ var app = express();
 app.set('port',process.env.PORT || 8080 );
 
 app.get('/', function (req, res) {
-  
-res.sendFile(path.join(__dirname, 'pages', 'index.html'));
+  //res.render('index',{title : 'Hello World' });
+  res.sendFile(path.join(__dirname, 'pages', 'indexdemo.html'));
 });
 
 app.get('/style.css', function (req, res) {
