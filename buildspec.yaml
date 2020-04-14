@@ -3,6 +3,7 @@ version: 0.2
 phases:
   pre-build:
     commands:
+      - echo pre build block
       - aws --version
       - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
       - REPOSITORY_URI=
@@ -11,7 +12,17 @@ phases:
   
   build:
     commands:
-      -docker build -t $REPOSITORY_URI:latest .
+      - echo build block
+      - docker build -t $REPOSITORY_URI:latest .
       - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
   
   post-build:
+    commands:
+      - echo post build block
+      - docker push $REPOSITORY_URI:latest
+      - docker push $REPOSITORY_URI:$IMAGE_TAG
+      - printf '[{"name":"nodeApp","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefiniton.json
+      
+  artifacts:
+     files: imagedefiniton.json
+  
