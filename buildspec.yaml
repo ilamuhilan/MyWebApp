@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  pre-build:
+    commands:
+      - aws --version
+      - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
+      - REPOSITORY_URI=
+      - COMMIT_HASH=(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
+      - IMAGE_TAG=BUILD-$(ECHO $CODEBUILD_BUILD_ID | aws -F":" '{print $2}')
+  
+  build:
+    commands:
+      -docker build -t $REPOSITORY_URI:latest .
+      - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
+  
+  post-build:
