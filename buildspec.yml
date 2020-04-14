@@ -1,7 +1,7 @@
 version: 0.2
 
 phases:
-  pre-build:
+  pre_build:
     commands:
       - echo pre build block
       - aws --version
@@ -16,7 +16,7 @@ phases:
       - docker build -t $REPOSITORY_URI:latest .
       - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
   
-  post-build:
+  post_build:
     commands:
       - echo post build block
       - docker push $REPOSITORY_URI:latest
