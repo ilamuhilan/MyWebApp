@@ -26,8 +26,8 @@ phases:
       - echo post build block
       - docker push $REPOSITORY_URI:latest
       - docker push $REPOSITORY_URI:$IMAGE_TAG
-      - printf '[{"name":"nodeApp","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefiniton.json
+      - printf '[{"name":"nodeApp","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
       
 artifacts:
-     files: imagedefiniton.json
+     files: imagedefinitions.json
   
