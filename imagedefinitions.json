@@ -1,6 +1,6 @@
 [
   {
     "name":"lendingplatform-work",
-    "imageUri": "730186024834.dkr.ecr.us-east-1.amazonaws.com/helloworld:latest"
+    "imageUri": "730186024834.dkr.ecr.us-east-1.amazonaws.com/codebuildapp:latest"
   }
 ]
