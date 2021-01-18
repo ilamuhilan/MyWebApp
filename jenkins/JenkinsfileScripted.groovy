@@ -1,8 +1,8 @@
 node("master"){
 
- stage("GIT) {
-    checkout scm
-  }
+// stage("GIT") {
+   // checkout scm
+ // }
   stage("Build"){
   println "Building your proj"
   }
