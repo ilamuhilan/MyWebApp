@@ -1,5 +1,5 @@
 final ACCOUNT = env.ACCOUNT ?: '730186024834'
-final GIT_REPO = env.GIT_REPO ?: 'https://github.com/Ranjithdss15/MyWebApp.git'
+final GIT_REPO = env.GIT_REPO ?: https://github.com/ilamuhilan/MyWebApp.git
 final APPNAME = env.APPNAME ?: 'helloworld-node'
 
 final ECR_REGISTRY = "${ACCOUNT}.dkr.ecr.us-east-1.amazonaws.com/${APPNAME}"
